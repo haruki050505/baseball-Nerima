@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color:gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 40px;
+}
+.teams{
+    color: white;
+    font-size: small;
+}
+
+.name{
+    color: yellow;
+    
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav > li > a{
+    color: white;
+    margin-left: 20px;
+    font-size: small;
+}
+
+.over{
+    position   : absolute;                   /* 親要素からの絶対位置 */
+    box-sizing : border-box;
+    white-space: nowrap;                     /* 折返しなし */
+    display    : block;                      /* ブロック要素にする */
+    width      : 100%;                       /* 親要素の幅に合わせる */
+    color      : yellow;    /* 文字色（透明度） */
+    /* background : gray;      背景色（透明度） */
+    background:rgba(128,128,128,0.5);
+    top        : 40%;                        /* 親要素からの上位置 */
+    left       : 0;                          /* 親要素からの左位置 */
+    text-align : center;                     /* 文字位置 */
+    transform  : translateY(-50%);           /* 文字BOXの位置ずらし */
+    padding    : 10px;                       /* BOX内の余白 */
+    font-size  : 30pt;                       /* 文字サイズ */
+    font-weight: bold;                       /* 太字 */
+    line-height: 1em;                        /* 1行の高さ */
+    animation-name: bigger-font;
+    animation-duration: 5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bigger-font {
+    0% {font-size: 30px;}
+    50% {font-size: 60px;}
+    100% {font-size: 50px;}
+}
+.guideline{
+    font-size: 10px;
+    animation-name: bigger-font2;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    color:white;
+    font-weight: bold;
+}
+@keyframes bigger-font2 {
+    0% {font-size: 10px;}
+    50% {font-size: 30px;}
+    100% {font-size: 20px;}
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    position   : relative;
+    overflow   : hidden;
+  }
+   
+   /*=== 画像の設定 ======================================= */
+  .slide img {
+    display    : block;
+    position   : absolute;
+    /* 画像のサイズを表示エリアに合せる */
+    width      : inherit;
+    height     : inherit;
+    opacity    : 0;
+    animation  : slideAnime 15s ease infinite;
+  }
+   /*=== スライドのアニメーションを段差で開始する ========= */
+  .slide img:nth-of-type(1) { animation-delay: 0s }
+  .slide img:nth-of-type(2) { animation-delay: 5s }
+  .slide img:nth-of-type(3) { animation-delay: 10s }
+  .slide img:nth-of-type(4) { animation-delay: 15s }
+  .slide img:nth-of-type(5) { animation-delay: 20s }
+   
+   /*=== スライドのアニメーション ========================= */
+  @keyframes slideAnime{
+     0% { opacity: 0; transform: scale(.1, .1)}
+     2% { opacity: 1; transform: scale(1, 1)  }
+    18% { opacity: 1; transform: scale(1, 1)  }
+    20% { opacity: 0; transform: scale(2, 2)  }
+   100% { opacity: 0; transform: scale(2, 2)  }
+  }
+
+#container{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.icon{
+    width: 100vw;
+    height: 10vh;
+    background-color:gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-top{
+    color: yellow;
+    background-color: gray;
+    margin-bottom: 0%;
+    height: 30px;
+    width: 100vw;
+}
+.SNS{
+    font-size: 20px;
+}
